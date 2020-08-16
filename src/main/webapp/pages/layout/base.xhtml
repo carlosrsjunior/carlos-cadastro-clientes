@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+
+>
+
+      
+
+
+<head>
+       
+       <ui:insert name="html_head_default">
+
+		    <link rel="stylesheet" type="text/css" href="${request.contextPath}/css/app.css"/>
+		    <link rel="stylesheet" type="text/css" href="${request.contextPath}/css/bootstrap.css"/>
+
+       </ui:insert>
+
+	   <ui:insert name="html_head">
+	   
+	   		<script src="${request.contextPath}/js/mascaras.js"></script>
+	   
+	   </ui:insert>
+    
+</head>
+
+<body >
+
+<f:view>
+
+
+		<ui:insert name="titulo">
+	         <div class="header">
+	         Cadastro de Clientes
+	         </div>
+    	</ui:insert>
+
+
+        <div class="conteudomenor"> 
+			<ui:insert name="conteudodinamicomenor">
+			</ui:insert>
+		</div>
+        <div class="conteudomaior"> 
+			<ui:insert name="conteudodinamicomaior">
+			</ui:insert>
+		</div>	
+  
+  </f:view>
+	
+</body>
+
+</html>
+

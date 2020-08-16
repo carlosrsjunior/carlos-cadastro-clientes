@@ -1,0 +1,49 @@
+.header {
+	margin: 0;
+    padding: 20px;
+    background-color: #20c997;
+    color: white;	
+    font-family: Verdana;
+    font-size: 30px;
+    display: flex;
+	justify-content: center; 
+}
+
+
+.footer {
+    display: flex;
+	justify-content: flex-end; 
+	margin: 0;
+    padding: 20px;
+    background-color: #20c997;
+    color: white;	
+    font-family: Verdana;
+    font-size: 20px;
+    
+}
+
+.titulo1 {
+	font-size:18pt; 
+	border-bottom:1px solid;
+	margin-bottom:15px;
+	margin-top:25px;
+	
+}
+
+.conteudomenor {
+		margin: 20px 250px;
+}
+
+.conteudomaior {
+		margin: 20px;
+}
+
+label {
+	font-weight:bold !important;
+}
+
+
+.message {
+	color:red; 
+	margin-left:20px;
+}	

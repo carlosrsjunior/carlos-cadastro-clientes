@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+      
+
+<ui:composition template="/pages/layout/base.xhtml">
+
+  <ui:define name="conteudodinamicomaior">
+    <h1 class="titulo1">
+         Listagem de Clientes
+      </h1>
+      <br />
+      <h:messages globalOnly="true"/> 
+      
+      <div class="well">
+         	      <h:form styleClass="form-stacked" id="FiltrarForm">
+	      
+	               <div>
+	               		<h:outputLabel value="Nome:" />
+	                    <h:inputText id="filtro_nome" value="#{clienteMBean.cliente.nome}" styleClass="span4" />
+	                    	                    
+	                    <h:outputLabel value="CPF: " />
+	                    <h:inputText id="filtro_cpf" value="#{clienteMBean.cliente.cpf}" styleClass="span2" maxlength="14" a:placeholder="000.000.000-00"/>	                    
+	                    <h:message for="Cpf" styleClass="message" />
+	              	                 	                 
+	               </div>
+	               	                 <div class="pull-right" >
+	                    
+	                    <h:commandButton styleClass="btn btn-primary" value="Pesquisar" action="#{clienteMBean.pesquisar()}"/>
+				        <h:commandButton styleClass="btn btn-warning" value="Novo" action="#{clienteMBean.cadastrar()}" />				  
+	                 </div>
+	                
+	      			</h:form>
+
+      </div>
+      
+  
+      <h:form id="ListarForm" >
+		      <table class="table table-striped">
+			      <tr>
+			      		   <th>Nome</th>
+			               <th>E-mail</th>
+			               <th>CPF</th>
+			               <th>Sexo</th>
+			               <th>Nascimento</th>
+			               <th>Naturalidade</th>
+			               <th>Nacionalidade</th>
+			               <th>Dt. Cadastro</th>
+			               <th>Dt. Atualização</th>			               
+			               <th>Ações</th>
+			               			               
+			      </tr>
+			      <c:forEach items="#{clienteMBean.clientes}" var="cliente">
+	                   <tr><td>#{cliente.nome}</td>  
+	                       <td>#{cliente.email}</td>
+	                       <td>#{cliente.cpf}</td>
+                           <td>#{cliente.sexo == 'MASCULINO' ? 'Masculino' : (cliente.sexo == 'FEMININO' ? 'Feminino' : '')}</td>
+	                       <td><h:outputText value="#{cliente.dataNascimento}" >
+    								<f:convertDateTime pattern="dd/MM/yyyy" />
+								</h:outputText>
+						   </td>
+	                       <td>#{cliente.naturalidade}</td>
+	                       <td>#{cliente.nacionalidade}</td>
+	                       <td><h:outputText value="#{cliente.dataCriacao}" >
+    								<f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+								</h:outputText>
+						   </td>
+						   <td><h:outputText value="#{cliente.dataAtualizacao}" >
+    								<f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+								</h:outputText>
+						   </td>
+	                       <td>		                       
+							    <h:graphicImage value="/images/editar.png" title="Editar" onclick="document.getElementById('Form:clienteId').value = '#{cliente.id}';document.getElementById('Form:submitEditar').click();"/>
+						    	<h:graphicImage value="/images/excluir.png" title="Excluir" onclick="if (! window.confirm('Tem certeza que deseja excluir este cliente?') ) {return false} else { document.getElementById('Form:clienteId').value = '#{cliente.id}';document.getElementById('Form:submitExcluir').click(); }"/>						    	
+	                       </td>
+	                   </tr>
+	              </c:forEach>
+
+		    </table>			    
+      </h:form>
+            
+            
+         <h:form id="Form" style="display:none">
+               <h:inputHidden id="clienteId" value="#{clienteMBean.clienteId}"></h:inputHidden>
+               <h:inputHidden id="nome" value="#{clienteMBean.cliente.nome}"></h:inputHidden>
+               <h:inputHidden id="cpf" value="#{clienteMBean.cliente.cpf}"></h:inputHidden>
+	           <h:commandButton id="submitEditar" styleClass="btn" value="Editar" action="#{clienteMBean.editar()}"/>
+	           <h:commandButton id="submitExcluir" styleClass="btn" value="Excuir" action="#{clienteMBean.excluir()}"/>
+	      </h:form>
+  </ui:define>
+  
+</ui:composition>
+
+</html>

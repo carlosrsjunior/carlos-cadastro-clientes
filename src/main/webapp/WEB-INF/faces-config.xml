@@ -1,0 +1,50 @@
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+          http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd" 
+        version="2.0">
+        
+        
+  <application>
+    <!-- diz para o JSF usar o framework Spring -->
+    <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+    
+ 
+    
+    
+	<locale-config>
+		<default-locale>pt_BR</default-locale>
+	</locale-config>
+  </application>
+
+
+     <validator>
+        <validator-id>cpfValidator</validator-id>
+        <validator-class>carlos.clientes.view.validators.CPFValidator</validator-class>
+    </validator>
+    
+     <validator>
+        <validator-id>emailValidator</validator-id>
+        <validator-class>carlos.clientes.view.validators.EmailValidator</validator-class>
+    </validator>
+    
+        
+        
+    <navigation-rule>
+  
+   <from-view-id>*</from-view-id>
+     
+     <navigation-case>
+        <from-outcome>pesquisar</from-outcome>
+        <to-view-id>/pages/pesquisar.jsf</to-view-id>
+  	</navigation-case>
+
+     <navigation-case>
+        <from-outcome>cadastrar</from-outcome>
+        <to-view-id>/pages/cadastrar.jsf</to-view-id>
+  	</navigation-case>
+  	
+  </navigation-rule>	
+           
+ 
+</faces-config>
