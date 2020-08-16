@@ -1,10 +1,14 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
  
-    <head>
+    <h:head>
         <title>Cadastro de Clientes</title>
-    <head>
-    <body>
-    
-     Olá
-    <body>
+    </h:head>
+    <h:body>
+    Ola
+    <h:form id="Form" style="display:none">
+       <h:commandButton id="Botao" action="#{clienteMBean.inicio()}"  />
+     </h:form>
+
+    </h:body>
 </html>
