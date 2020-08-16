@@ -9,7 +9,8 @@
     <!-- diz para o JSF usar o framework Spring -->
     <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
     
- 
+    <!-- diz para o JSF usar o Facelets -->
+    <view-handler>com.sun.facelets.FaceletViewHandler</view-handler> 
     
     
 	<locale-config>
