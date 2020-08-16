@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15972958499030" configfile="/Clientes/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="370" id="pf15972959159191" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15972959159382 pf15973643907710" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/pesquisar.jsf" x="338" y="178" id="pf15972959159393" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15972959159382" path="/pages/pesquisar.jsf"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/cadastrar.jsf" x="338" y="562" id="pf15973643907711" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf15973643907710" path="/pages/cadastrar.jsf"/>
-  <links id="pf15972959159382" target="pf15972959159393" source="pf15972959159191" outcome="pesquisar"/>
-  <links id="pf15973643907710" target="pf15973643907711" source="pf15972959159191" outcome="cadastrar"/>
-</pageflow:Pageflow>
