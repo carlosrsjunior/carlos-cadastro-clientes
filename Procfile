@@ -1,1 +1,1 @@
-web: java port=$PORT -Dspring.profiles.active=prod -jar target/clientes-0.0.1-SNAPSHOT.war
+web: java $JAVA_OPTS -Dserver.port=$PORT -Dspring.profiles.active=prod -jar target/clientes-0.0.1-SNAPSHOT.war
